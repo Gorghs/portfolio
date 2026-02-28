@@ -107,4 +107,4 @@ This project consists of a **Frontend** (React/Vite) and a **Backend** (Express/
 ```
 
 ---
-**[Download Resume](/public/previews/resume.pdf)** | **[View Engineering Projects](/projects)**
+**[Download Resume](/public/previews/resume.pdf)** 
