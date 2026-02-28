@@ -1,13 +1,28 @@
 services:
+  # Backend API Service
   - type: web
     name: karthick-portfolio-api
     env: node
     plan: free
+    region: singapore
     buildCommand: cd api && npm install && npm run build
     startCommand: cd api && npm start
     envVars:
-      - key: NODE_VERSION
-        value: 18.17.0
       - key: PORT
         value: 10000
     autoDeploy: true
+
+  # Frontend Static Site
+  - type: static
+    name: karthick-portfolio-ui
+    env: static
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: karthick-portfolio-api
+          property: host
