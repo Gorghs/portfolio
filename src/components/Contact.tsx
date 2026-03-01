@@ -63,7 +63,18 @@ const Contact: React.FC = () => {
     e.preventDefault();
     const subject = encodeURIComponent(`Inquiry: ${formData.subject}`);
     const body = encodeURIComponent(`Hi Karthick,\n\nMy name is ${formData.name}.\n\n${formData.message}\n\nBest,\n${formData.name} (${formData.email})`);
-    window.location.href = `mailto:karthick.venkatachalem@gmail.com?subject=${subject}&body=${body}`;
+    const email = 'karthick.venkatachalem@gmail.com';
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${subject}&body=${body}`;
+
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(
+        `To: ${email}\nSubject: ${decodeURIComponent(subject)}\n\n${decodeURIComponent(body)}`
+      ).catch(() => {
+        // Ignore clipboard errors and continue to open Gmail.
+      });
+    }
+
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };

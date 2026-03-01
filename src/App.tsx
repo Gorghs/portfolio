@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,10 +7,6 @@ import { AnimatePresence } from 'framer-motion';
 
 // Import all necessary components and providers
 import Navigation from './components/Navigation';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
-import GuestBook from './pages/GuestBook';
 import Loader from './components/Loader';
 
 import CustomCursor from './components/CustomCursor';
@@ -18,6 +14,11 @@ import ThemeProvider from './context/ThemeContext';
 import { MusicProvider } from './context/MusicContext';
 import { TransitionProvider } from './context/TransitionContext';
 import Transition from './components/Transition';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const Projects = React.lazy(() => import('./pages/Projects'));
+const ProjectDetail = React.lazy(() => import('./pages/ProjectDetail'));
+const GuestBook = React.lazy(() => import('./pages/GuestBook'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,12 +103,14 @@ function App() {
                 <Navigation />
                 <Transition />
 
-                <Routes>
-                  <Route path="/" element={<Home startAnimation={showContent} />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/projects/:id" element={<ProjectDetail />} />
-                  <Route path="/guestbook" element={<GuestBook />} />
-                </Routes>
+                <Suspense fallback={null}>
+                  <Routes>
+                    <Route path="/" element={<Home startAnimation={showContent} />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:id" element={<ProjectDetail />} />
+                    <Route path="/guestbook" element={<GuestBook />} />
+                  </Routes>
+                </Suspense>
               </div>
             </div>
           </TransitionProvider>

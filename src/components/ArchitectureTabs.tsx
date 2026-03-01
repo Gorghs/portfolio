@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { ProjectArchitecture } from '../data/projects';
-import MermaidDiagram from './MermaidDiagram';
+import React from 'react';
+
+const MermaidDiagram = React.lazy(() => import('./MermaidDiagram'));
 
 interface ArchitectureTabsProps {
     architecture: ProjectArchitecture;
@@ -54,12 +56,14 @@ const ArchitectureTabs: React.FC<ArchitectureTabsProps> = ({ architecture, proje
 
             {/* Diagram Panel */}
             <div className="border border-t-0 border-black/10 dark:border-white/10 bg-white dark:bg-black min-h-[450px]">
-                <MermaidDiagram
-                    key={`${projectId}-${active}`}
-                    code={diagramMap[active]}
-                    id={`${projectId}-${active}`}
-                    maxWidth={active === 'hld' || active === 'lld' ? '700px' : '100%'}
-                />
+                <Suspense fallback={null}>
+                    <MermaidDiagram
+                        key={`${projectId}-${active}`}
+                        code={diagramMap[active]}
+                        id={`${projectId}-${active}`}
+                        maxWidth={active === 'hld' || active === 'lld' ? '700px' : '100%'}
+                    />
+                </Suspense>
             </div>
         </div>
     );

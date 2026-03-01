@@ -181,16 +181,9 @@ const Hero: React.FC<HeroProps> = ({ startAnimation = false }) => {
         {/* Center: Monumental Typography */}
         <div className="flex-1 flex flex-col justify-center items-center w-full relative">
           <h1 ref={nameRef} className="font-bold tracking-[-0.06em] uppercase text-center z-20 whitespace-nowrap text-black dark:text-white flex flex-col items-start leading-[0.85]">
-            <span className="text-[12vw] md:text-[4vw] block mb-2 md:-mb-2 self-center md:self-start ml-6 md:ml-4">
-              {"HELLO IM".split('').map((char, i) => (
-                <span key={`k-${i}`} className="hero-char inline-block text-black dark:text-black transition-all duration-300 cursor-default hover:text-black dark:hover:text-black">
-                  {char}
-                </span>
-              ))}
-            </span>
             <span className="text-[21vw] md:text-[19vw] block -mt-4 opacity-95">
               {"KARTHICK".split('').map((char, i) => (
-                <span key={`k2-${i}`} className="hero-char inline-block text-white transition-all duration-300 cursor-default hover:text-white">
+                <span key={`k2-${i}`} className="hero-char inline-block text-black dark:text-white transition-all duration-300 cursor-default hover:text-black dark:hover:text-white">
                   {char}
                 </span>
               ))}

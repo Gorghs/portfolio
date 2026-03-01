@@ -26,19 +26,57 @@ const BlogSection: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const fallbackPosts: BlogPost[] = [
+    {
+      title: 'Open Source Automation: A Practical Adoption Guide',
+      pubDate: '2024-12-20',
+      link: 'https://opensource.com/article/19/3/open-source-automation',
+      guid: 'opensource-automation-guide',
+      author: 'Open Source Articles',
+      thumbnail: '',
+      description: '',
+      content: '',
+      categories: ['Open Source']
+    },
+    {
+      title: 'How to Contribute to Open Source Projects',
+      pubDate: '2024-11-18',
+      link: 'https://opensource.guide/how-to-contribute/',
+      guid: 'opensource-contribute-guide',
+      author: 'Open Source Guides',
+      thumbnail: '',
+      description: '',
+      content: '',
+      categories: ['Community']
+    },
+    {
+      title: 'The Business Case for Open Source',
+      pubDate: '2024-10-02',
+      link: 'https://opensource.com/business',
+      guid: 'opensource-business-case',
+      author: 'Open Source Articles',
+      thumbnail: '',
+      description: '',
+      content: '',
+      categories: ['Strategy']
+    }
+  ];
+
   // Fetch Medium Data
   useEffect(() => {
     const fetchMedium = async () => {
       try {
         const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@gorghs');
         const data = await res.json();
-        if (data.status === 'ok') {
+        if (data.status === 'ok' && Array.isArray(data.items) && data.items.length > 0) {
           setPosts(data.items.slice(0, 3));
         } else {
           console.warn("Medium RSS status not ok", data);
+          setPosts(fallbackPosts);
         }
       } catch (err) {
         console.error("Medium Fetch Error", err);
+        setPosts(fallbackPosts);
       } finally {
         setLoading(false);
       }
@@ -149,8 +187,8 @@ const BlogSection: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <a href="https://github.com/gorghs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest hover:text-red-500 transition-colors group">
-            View All on GitHub <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          <a href="https://opensource.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest hover:text-red-500 transition-colors group">
+            View All on OpenSource.com <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </a>
         </div>
 
