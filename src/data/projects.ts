@@ -37,8 +37,8 @@ export const projects: Project[] = [
         year: '2026',
         status: 'Active Development',
         image: '/image2.jpg',
-        github: 'https://github.com/gorghs',
-        live: 'https://github.com/gorghs',
+        github: 'https://github.com/Gorghs/Project_steve',
+        live: 'https://project-steve-ten.vercel.app',
         impact: [
             '4000+ Structured workflows generated',
             'Low-memory model optimization',
@@ -154,8 +154,8 @@ export const projects: Project[] = [
         year: '2026',
         status: 'Prototype / Pitch Stage',
         image: '/image2.jpg',
-        github: 'https://github.com/gorghs',
-        live: 'https://github.com/gorghs',
+        github: 'https://github.com/Gorghs/EARTHIFY',
+        live: 'https://earthify-1.onrender.com',
         impact: [
             'Industrial conveyor concept testing',
             'Automation-based route modeling',
