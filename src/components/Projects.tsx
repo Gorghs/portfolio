@@ -12,6 +12,7 @@ const projects = [
     description: 'Natural language to n8n workflow JSON generation with deterministic schema-safe output.',
     tech: ['Python', 'n8n', 'Linux'],
     link: '/projects/01',
+    live: 'https://project-steve-ten.vercel.app',
     color: '#FF4D00', // A vibrant Swiss orange/red
   },
   {
@@ -22,7 +23,8 @@ const projects = [
     description: 'Smart waste monitoring and logistics automation concept for scalable operational routing.',
     tech: ['Backend APIs', 'IoT', 'Automation'],
     link: '/projects/02',
-    color: '#FF4D00', // International Klein Blue
+    live: 'https://earthify-1.onrender.com',
+    color: '#0057FF', // International Klein Blue
   },
   {
     id: '03',
@@ -117,7 +119,9 @@ const Projects: React.FC = () => {
             <div className="mt-8 max-w-md text-black dark:text-white">
               <p className="text-lg leading-snug">{projects[0].description}</p>
               <div className="mt-6 flex gap-4">
-                <Link to={projects[0].link} className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#FF4D00]">Live <FiArrowUpRight /></Link>
+                {projects[0].live && (
+                  <a href={projects[0].live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#FF4D00]">Live <FiArrowUpRight /></a>
+                )}
               </div>
             </div>
           </div>
@@ -136,7 +140,9 @@ const Projects: React.FC = () => {
             <div className="mt-8 max-w-md ml-auto text-left text-black dark:text-white">
               <p className="text-lg leading-snug">{projects[1].description}</p>
               <div className="mt-6 flex gap-4">
-                <Link to={projects[1].link} className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#0057FF]">Live <FiArrowUpRight /></Link>
+                {projects[1].live && (
+                  <a href={projects[1].live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#0057FF]">Live <FiArrowUpRight /></a>
+                )}
               </div>
             </div>
           </div>
