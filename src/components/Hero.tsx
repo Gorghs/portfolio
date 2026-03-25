@@ -53,47 +53,46 @@ const Hero: React.FC<HeroProps> = ({ startAnimation = false }) => {
       if (startAnimation) {
         const tl = gsap.timeline();
 
-        // 1. Grid Reveal (Smoother, Liquid Feel)
+        // 1. Grid Reveal (Faster)
         tl.to(vAnimate, {
           scaleY: 1,
-          duration: 1.8,
-          stagger: { from: "center", amount: 0.8 },
+          duration: 0.8, // Shorter
+          stagger: { from: "center", amount: 0.4 }, // Reduced stagger
           ease: 'power2.inOut',
           transformOrigin: 'top'
         })
           .to(hAnimate, {
             scaleX: 1,
-            duration: 1.8,
-            stagger: { from: "start", amount: 0.8 },
+            duration: 0.8, // Shorter
+            stagger: { from: "start", amount: 0.4 },
             ease: 'power2.inOut',
             transformOrigin: 'left'
           }, "<")
 
-          // 2. Fade ONLY Animated Grid to match static background (if needed)
-          // Actually, let's keep them at 0.1 or fade them to 0.05 to match static.
+          // 2. Fade grid quickly
           .to([...vAnimate, ...hAnimate], {
             opacity: 0.09,
-            duration: 1.0,
+            duration: 0.5,
             ease: "power2.out"
-          })
+          }, "-=0.3")
 
-          // 3. Name Reveal (Staggered Up)
+          // 3. Name Reveal (Start earlier, shorter duration)
           .to('.hero-char', {
             y: 0,
             opacity: 1,
-            duration: 1.2,
-            stagger: 0.05,
+            duration: 0.8, // Shorter
+            stagger: 0.03, // Tighter stagger
             ease: 'power4.out'
-          }, "-=1.2") // Contrast with grid fade
+          }, "-=0.8") // Start sooner, overlap with grid
 
           // 4. Metadata Reveal
           .to('.meta-item', {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            stagger: 0.1,
+            duration: 0.6,
+            stagger: 0.08,
             ease: 'power2.out'
-          }, "-=0.5");
+          }, "-=0.4");
       }
 
     }, containerRef);

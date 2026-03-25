@@ -111,7 +111,7 @@ const Projects: React.FC = () => {
 
           {/* Title (Massive, Spanning) */}
           <div className="col-span-12 md:col-span-10 md:col-start-3 relative z-20">
-            <Link to={projects[0].link} className="block">
+            <Link to={projects[0].link} className="inline-block">
               <h3 className="text-[18vw] md:text-[14vw] font-black uppercase tracking-tighter leading-[0.8] transition-all duration-300 text-black dark:text-white hover:italic hover:text-transparent hover:[-webkit-text-stroke:1px_black] dark:hover:[-webkit-text-stroke:1px_white]">
                 {renderTitle(projects[0].title)}
               </h3>
@@ -131,24 +131,24 @@ const Projects: React.FC = () => {
         {/* --- PROJECT 02: EARTHIFY (Right Heavy) --- */}
         <div className="group relative mb-24 md:mb-8 grid grid-cols-1 md:grid-cols-12 gap-x-8 items-start">
           {/* Title (Massive, Right Aligned) */}
-          <div className="col-span-12 md:col-span-10 md:col-start-1 order-2 md:order-2 text-right relative z-20">
-            <Link to={projects[1].link} className="block">
+          <div className="col-span-12 md:col-span-10 md:col-start-1 order-2 md:order-2 text-right relative z-20 pointer-events-none">
+            <Link to={projects[1].link} className="inline-block pointer-events-auto">
               <h3 className="text-[18vw] md:text-[14vw] font-black uppercase tracking-tighter leading-[0.8] transition-all duration-300 text-right text-black dark:text-white hover:italic hover:text-transparent hover:[-webkit-text-stroke:1px_black] dark:hover:[-webkit-text-stroke:1px_white]">
                 {renderTitle(projects[1].title)}
               </h3>
             </Link>
-            <div className="mt-8 max-w-md ml-auto text-left text-black dark:text-white">
+            <div className="mt-8 max-w-md ml-auto text-left text-black dark:text-white pointer-events-auto">
               <p className="text-lg leading-snug">{projects[1].description}</p>
               <div className="mt-6 flex gap-4">
                 {projects[1].live && (
-                  <a href={projects[1].live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#0057FF]">Live <FiArrowUpRight /></a>
+                  <a href={projects[1].live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#0057FF] relative z-30">Live <FiArrowUpRight /></a>
                 )}
               </div>
             </div>
           </div>
 
           {/* Meta (Right) */}
-          <div className="col-span-12 md:col-span-2 order-1 md:order-3 md:sticky md:top-32 self-start mb-8 md:mb-0 text-right flex flex-col items-end">
+          <div className="col-span-12 md:col-span-2 order-1 md:order-3 md:sticky md:top-32 self-start mb-8 md:mb-0 text-right flex flex-col items-end z-10 pointer-events-none">
             <span className="text-sm font-mono block mb-2 text-red-600">02 / 2026</span>
             <h4 className="text-xl font-bold uppercase leading-tight whitespace-pre-wrap text-black dark:text-white">{projects[1].category}</h4>
             <div className="h-px w-8 bg-black dark:bg-white my-4"></div>
@@ -173,16 +173,18 @@ const Projects: React.FC = () => {
 
           {/* Title (Massive, Spanning) */}
           <div className="col-span-12 md:col-span-10 md:col-start-3 relative z-20">
-            <Link to={projects[2].link} className="block">
+            <Link to={projects[2].link} className="inline-block">
               <h3 className="text-[18vw] md:text-[14vw] font-black uppercase tracking-tighter leading-[0.8] transition-all duration-300 text-black dark:text-white hover:italic hover:text-transparent hover:[-webkit-text-stroke:1px_black] dark:hover:[-webkit-text-stroke:1px_white]">
                 {renderTitle(projects[2].title)}
               </h3>
             </Link>
             <div className="mt-8 max-w-md text-black dark:text-white">
               <p className="text-lg leading-snug">{projects[2].description}</p>
-              <div className="mt-6 flex gap-4">
-                <Link to={projects[2].link} className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#00A86B]">Live <FiArrowUpRight /></Link>
-              </div>
+              {projects[2].live && (
+                <div className="mt-6 flex gap-4">
+                  <a href={projects[2].live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase border-b border-current pb-1 hover:text-[#00A86B]">Live <FiArrowUpRight /></a>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ export const projects: Project[] = [
         year: '2026',
         status: 'Active Development',
         image: '/image2.jpg',
-        github: 'https://github.com/Gorghs/Project_steve',
+        github: 'https://github.com/gorghs/Project_steve',
         live: 'https://project-steve-ten.vercel.app',
         impact: [
             '4000+ Structured workflows generated',
@@ -154,7 +154,7 @@ export const projects: Project[] = [
         year: '2026',
         status: 'Prototype / Pitch Stage',
         image: '/image2.jpg',
-        github: 'https://github.com/Gorghs/EARTHIFY',
+        github: 'https://github.com/gorghs/EARTHIFY',
         live: 'https://earthify-1.onrender.com',
         impact: [
             'Industrial conveyor concept testing',
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     },
     {
         id: '03',
-        title: 'S.A.G.E. – Semantic Adaptive Generative Engine',
+        title: 'S.A.G.E.',
         category: 'NLP / Semantic Intelligence',
         description: 'Embedding-based semantic ranking and similarity engine.',
         longDescription: 'S.A.G.E. is a semantic intelligence system built on SBERT-style embedding architecture. It enables efficient similarity scoring, contextual ranking, and intelligent content filtering without heavy inference. Vector similarity search pipelines support scalable semantic comparison.',
@@ -271,7 +271,7 @@ export const projects: Project[] = [
         status: 'Experimental Development',
         image: '/image2.jpg',
         github: 'https://github.com/gorghs',
-        live: 'https://github.com/gorghs',
+        live: null,
         impact: [
             'High-precision similarity scoring',
             'Efficient embedding retrieval',

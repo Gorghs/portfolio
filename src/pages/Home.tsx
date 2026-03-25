@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
-import BlogSection from '../components/BlogSection';
+import LeetCodeProfile from '../components/LeetCodeProfile';
 import TestimonialPreview from '../components/TestimonialPreview';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -25,7 +25,7 @@ const Home: React.FC<HomeProps> = ({ startAnimation = false }) => {
       <Projects />
       <DevActivity />
       <Timeline />
-      <BlogSection />
+      <LeetCodeProfile />
       {/* <TestimonialPreview /> */}
       <Contact />
       <Footer />

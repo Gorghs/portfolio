@@ -18,7 +18,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       const target = { val: 0 };
       gsap.to(target, {
         val: 100,
-        duration: 3.5, // Slower, more deliberate
+        duration: 1.8, // Optimized for faster load
         ease: "power3.inOut", // Stronger ease-in-out for "premium" feel
         onUpdate: () => {
           setCount(Math.round(target.val));
@@ -53,15 +53,15 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
 
       tl.to(vAnimate, {
         scaleY: 1,
-        duration: 2.2, // Slower
-        stagger: { from: "center", amount: 0.8 }, // More spread out
+        duration: 1.2, // Faster
+        stagger: { from: "center", amount: 0.4 }, // More condensed
         ease: 'power3.inOut', // Smoother ease
         transformOrigin: 'top'
       })
         .to(hAnimate, {
           scaleX: 1,
-          duration: 2.2, // Slower
-          stagger: { from: "start", amount: 0.8 },
+          duration: 1.2, // Faster
+          stagger: { from: "start", amount: 0.4 },
           ease: 'power3.inOut',
           transformOrigin: 'left'
         }, "<")
@@ -69,7 +69,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
         // Fade to subtle state
         .to([...vAnimate, ...hAnimate], {
           opacity: 0.1, // Match static opacity
-          duration: 1.0,
+          duration: 0.6,
           ease: "power2.out"
         });
 
@@ -94,7 +94,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       // Small delay before starting exit animation to let user register 100%
       const timer = setTimeout(() => {
         setPhase("exit");
-      }, 800);
+      }, 300); // Reduced delay
       return () => clearTimeout(timer);
     }
   }, [count]);
@@ -138,7 +138,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
             scaleY: phase === "exit" ? 0 : 1
           }}
           transition={{
-            duration: 1.2,
+            duration: 0.6, // Faster exit
             ease: [0.87, 0, 0.13, 1], // Stronger easing for more dramatic effect
             delay: phase === "exit" ? col.delay : 0,
           }}
@@ -206,12 +206,12 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
             <motion.div
               className={`col-span-3 border ${borderColor} h-32 mt-12`}
               animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
               className={`col-start-8 col-span-2 border ${borderColor} h-64 -mt-12 rounded-full`}
               animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
 
@@ -220,7 +220,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
             animate={{
               opacity: [0.8, 1, 0.8],
             }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
           >
             {count}%
           </motion.h2>
