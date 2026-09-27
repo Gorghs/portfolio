@@ -1,7 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "karthickv-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "author": "Karthick V <dev.karthickv@gmail.com>",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

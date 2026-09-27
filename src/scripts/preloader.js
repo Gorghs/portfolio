@@ -1,6 +1,6 @@
-// Preloader with nickname to full name animation
+// Preloader with progress bar animation
 export function initPreloader() {
-  const PRELOADER_SEEN_KEY = "vizzfolio-preloader-seen";
+  const PRELOADER_SEEN_KEY = "karthickv-portfolio-preloader-seen";
   const preloader = document.getElementById("preloader");
   const preloaderName = document.getElementById("preloader-name");
   const mainContent = document.getElementById("main-content");
@@ -26,31 +26,33 @@ export function initPreloader() {
   try {
     sessionStorage.setItem(PRELOADER_SEEN_KEY, "1");
   } catch {
-    // Ignore storage access issues (private mode, blocked storage, etc.)
+    // Ignore storage access issues
   }
 
-  // Copy target font styles for pixel-perfect alignment
   copyTargetStyles(preloaderName, mainContent);
 
-  // Animation: KV → K → Karthick V
-  const nickname = "KV";
-  const fullName = "Karthick V";
-  const commonPrefix = "K"; // The part that stays
+  // Create progress bar element
+  const progressBar = document.createElement("div");
+  progressBar.id = "preloader-progress";
+  progressBar.style.cssText = `
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: width 0.15s linear;
+  `;
+  preloaderName.style.position = "relative";
+  preloaderName.appendChild(progressBar);
 
-  // Phase 1: Type nickname
-  typeText(preloaderName, nickname, 100, () => {
+  // Animate progress bar
+  animateProgress(progressBar, 0, 100, 1200, () => {
     setTimeout(() => {
-      // Phase 2: Backspace to common prefix
-      backspaceText(preloaderName, nickname, commonPrefix, 80, () => {
-        // Phase 3: Type the rest of full name
-        typeText(preloaderName, fullName.slice(commonPrefix.length), 60, () => {
-          // Phase 4: Animate to target position
-          setTimeout(() => {
-            animateToTarget(preloader, preloaderName, mainContent);
-          }, 400);
-        }, commonPrefix); // Start with prefix already there
-      });
-    }, 500); // Pause on nickname
+      progressBar.remove();
+      animateToTarget(preloader, preloaderName, mainContent);
+    }, 200);
   });
 }
 
@@ -74,37 +76,33 @@ function copyTargetStyles(preloaderName, mainContent) {
     mainContent.style.removeProperty("opacity");
     mainContent.style.removeProperty("visibility");
   });
+
+  // Set the name immediately
+  preloaderName.textContent = "Karthick V";
 }
 
-function typeText(element, text, speed, callback, prefix = "") {
-  let i = 0;
-  element.textContent = prefix;
+function animateProgress(element, start, end, duration, callback) {
+  const startTime = performance.now();
 
-  function type() {
-    if (i < text.length) {
-      element.textContent = prefix + text.slice(0, i + 1);
-      i++;
-      setTimeout(type, speed);
+  function step(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutCubic(progress);
+    const current = start + (end - start) * eased;
+    element.style.width = `${current}%`;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
     } else {
       callback?.();
     }
   }
-  type();
+
+  requestAnimationFrame(step);
 }
 
-function backspaceText(element, currentText, targetPrefix, speed, callback) {
-  let text = currentText;
-
-  function backspace() {
-    if (text.length > targetPrefix.length) {
-      text = text.slice(0, -1);
-      element.textContent = text;
-      setTimeout(backspace, speed);
-    } else {
-      callback?.();
-    }
-  }
-  backspace();
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
 }
 
 function animateToTarget(preloader, preloaderName, mainContent) {
@@ -122,25 +120,16 @@ function animateToTarget(preloader, preloaderName, mainContent) {
     const targetRect = targetEl.getBoundingClientRect();
     const currentRect = preloaderName.getBoundingClientRect();
 
-    // Disable transition for initial position
     preloaderName.style.transition = "none";
     preloaderName.classList.remove("centered");
     preloaderName.style.top = `${currentRect.top}px`;
     preloaderName.style.left = `${currentRect.left}px`;
     preloaderName.style.transform = "none";
 
-    // Force reflow
     preloaderName.offsetHeight;
 
-    // Enable transition
     preloaderName.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
 
-    // Calculate offset
-    const targetStyle = window.getComputedStyle(targetEl);
-    const fontSize = parseFloat(targetStyle.fontSize);
-    const verticalOffset = (targetRect.height - fontSize) / 2;
-
-    // Animate to target
     const dx = targetRect.left - currentRect.left;
     const dy = targetRect.top - currentRect.top;
 
