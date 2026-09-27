@@ -125,61 +125,40 @@
       "image": null
     },
     {
-      "title": "CodeFocus",
-      "description": "Turns Codeforces into a full coding environment with a split-view editor, sample runner, one-click submit, and per-problem sketchpad.",
+      "title": "DraftBlaster",
+      "description": "Cold email automation extension that sends personalized outreach at scale. Features template management, variable substitution, send scheduling, and delivery tracking — all from your browser.",
       "tags": [
         "Chrome Extension",
-        "Codeforces",
-        "Monaco Editor"
+        "Cold Email",
+        "Automation"
       ],
-      "link": "https://github.com/Gorghs/codefocus",
+      "link": "https://github.com/Gorghs/draftblaster",
       "image": null
-    },
-    {
-      "title": "Audio Focus",
-      "description": "Automatically silences or ducks every background tab so the one you're focused on stays at full volume. Supports Mute mode and Duck mode with a customizable volume slider.",
-      "tags": [
-        "Chrome Extension",
-        "JavaScript",
-        "Tab Audio"
-      ],
-      "link": "https://github.com/Gorghs/audio-focus",
-      "image": null
-    },
-    {
-      "title": "JustResults",
-      "description": "Cuts down network requests to try and avoid server crash by skipping unnecessary CSS, images, and JavaScript.",
-      "tags": [
-        "Performance",
-        "Web Requests"
-      ],
-      "link": "https://github.com/Gorghs/JustResults",
-      "image": "justresults"
     }
   ],
   "extensionsArchive": [
     {
       "year": "2025",
-      "title": "LeetCode CMD+K",
-      "description": "A keyboard-first command palette for LeetCode. Search and insert Java & C++ snippets directly into the editor.",
+      "title": "Inspect Locker",
+      "description": "Firefox extension that persists DevTools inspect-element edits across reloads using a local-only storage model with zero external data transmission.",
       "tech": [
-        "Monaco Editor",
-        "LeetCode",
-        "Java",
-        "C++"
+        "Firefox Extension",
+        "JavaScript",
+        "WebExtension API"
       ],
-      "link": "https://github.com/Gorghs/Leetcode-Cmdk",
-      "image": "leetcode-cmdk"
+      "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
+      "image": null
     },
     {
       "year": "2025",
-      "title": "Leetcode-Fahh",
-      "description": "Plays FAHH every time you fail a LeetCode test case. Works on both Run and Submit.",
+      "title": "DraftBlaster",
+      "description": "Cold email automation extension that sends personalized outreach at scale. Features template management, variable substitution, send scheduling, and delivery tracking — all from your browser.",
       "tech": [
-        "LeetCode",
-        "Chrome Extension"
+        "Chrome Extension",
+        "Cold Email",
+        "Automation"
       ],
-      "link": "https://github.com/Gorghs/Leetcode-Fahh",
+      "link": "https://github.com/Gorghs/draftblaster",
       "image": null
     }
   ],
