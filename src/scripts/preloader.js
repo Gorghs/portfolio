@@ -32,10 +32,10 @@ export function initPreloader() {
   // Copy target font styles for pixel-perfect alignment
   copyTargetStyles(preloaderName, mainContent);
 
-  // Animation: Vizz → Vi → Visalan H
-  const nickname = "Vizz";
-  const fullName = "Visalan H";
-  const commonPrefix = "Vi"; // The part that stays
+  // Animation: KV → K → Karthick V
+  const nickname = "KV";
+  const fullName = "Karthick V";
+  const commonPrefix = "K"; // The part that stays
 
   // Phase 1: Type nickname
   typeText(preloaderName, nickname, 100, () => {

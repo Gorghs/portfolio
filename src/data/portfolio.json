@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Visalan H | Full Stack Developer",
-    "description": "Full-stack developer building web apps that help people and make dev work slightly less painful."
+    "title": "Karthick V | Software Engineer",
+    "description": "Software Engineer | Systems, Backend & Performance — Building high-throughput backend systems, data pipelines, and performance-optimized services."
   },
   "intro": {
-    "name": "Visalan H",
-    "title": "Full Stack Developer",
-    "bio": "web apps that help people and make dev work slightly less painful."
+    "name": "Karthick V",
+    "title": "Software Engineer | Systems, Backend & Performance",
+    "bio": "Computer Science undergraduate graduating in 2027 with hands-on experience building backend and data-intensive systems."
   },
   "nav": [
     {
@@ -31,423 +31,221 @@
     }
   ],
   "sectionDescriptions": {
-    "projects": "I build web stuff in the hopes that it makes someone's life slightly less annoying. Here are some projects",
-    "extensions": "Browser helpers that promise one feature and deliver three new buttons you don't need.",
-    "npm-packages": "I occasionally throw code at NPM that approximately 7 people find useful. Here's some stuff I've made",
-    "experience": "I haven't worked anywhere officially yet, but my GitHub isn't empty. Looking for someone to fix that first part, Interested?",
-    "education": "Currently sitting through engineering classes while learning way more from side projects."
+    "projects": "High-throughput systems, data pipelines, and performance-critical services I've built.",
+    "extensions": "Browser extensions that persist state and enhance developer workflows.",
+    "npm-packages": "Occasionally publishing CLI tools and utilities to NPM.",
+    "experience": "Professional experience building and shipping backend features at scale.",
+    "education": "Academic background and achievements in Computer Science."
   },
   "socials": [
     {
       "name": "GitHub",
-      "href": "https://github.com/Visalan-H",
+      "href": "https://github.com/Karthick-V",
       "icon": "github"
     },
     {
       "name": "LinkedIn",
-      "href": "https://www.linkedin.com/in/visalan-h-vizz/",
+      "href": "https://www.linkedin.com/in/karthick-v",
       "icon": "linkedin"
     },
     {
       "name": "LeetCode",
-      "href": "https://leetcode.com/u/Visalan_H/",
+      "href": "https://leetcode.com/u/karthickv/",
       "icon": "leetcode"
     },
     {
-      "name": "CodePen",
-      "href": "https://codepen.io/Visalan-H-the-selector",
-      "icon": "codepen"
-    },
-    {
-      "name": "Medium",
-      "href": "https://medium.com/@visalan",
-      "icon": "medium"
-    },
-    {
       "name": "Email",
-      "href": "mailto:visalanprivate@gmail.com",
+      "href": "mailto:dev.karthickv@gmail.com",
       "icon": "email"
     }
   ],
   "projects": [
     {
-      "title": "Vizzible",
-      "description": "One shareable link for your GitHub streak, Codeforces rating, and LeetCode grind — instead of three profiles nobody clicks.",
-      "link": "https://vizzible.vercel.app/",
+      "title": "Sherlock",
+      "description": "High-throughput job data aggregation platform ingesting 15K+ records/day from 160+ independent sources using 20+ concurrent workers. Engineered content-hash deduplication eliminating 35% overlapping postings and built a relevance-ranking pipeline returning results in under 200ms. Built fault-tolerant ingestion with Redis-backed caching, per-source rate limiting, and exponential-backoff retries reducing redundant requests by 60% with 99% pipeline uptime.",
+      "link": "https://github.com/Karthick-V/Sherlock",
       "tags": [
-        "React",
-        "Express",
-        "MongoDB",
-        "GitHub OAuth"
+        "Python",
+        "Redis",
+        "Selenium",
+        "GraphQL",
+        "Concurrency"
       ],
-      "stats": [],
+      "stats": [
+        "15K+ records/day",
+        "160+ sources",
+        "200ms query latency",
+        "99% uptime"
+      ],
       "image": "vizzible"
     },
     {
-      "title": "GitRid",
-      "description": "Manage and bulk delete up to 50 GitHub repositories at once with OAuth authentication.",
-      "link": "https://gitrid.vercel.app/",
+      "title": "EARTHIFY",
+      "description": "Real-time waste classification service serving a 6-class vision model at 90% accuracy through a Flask API for webcam inference. Optimized inference pipeline with ONNX Runtime, reducing latency from 110ms to 33ms (70% improvement) and reaching 30 FPS on commodity CPU hardware.",
+      "link": "https://github.com/Karthick-V/EARTHIFY",
       "tags": [
-        "React",
-        "TypeScript",
-        "Express",
-        "MongoDB",
-        "GitHub OAuth"
+        "C++",
+        "Python",
+        "YOLOv8",
+        "ONNX Runtime",
+        "Flask",
+        "Computer Vision"
       ],
       "stats": [
-        "~1.4k requests",
-        "13 users"
+        "90% accuracy",
+        "33ms latency",
+        "30 FPS on CPU",
+        "70% speedup"
+      ],
+      "image": "trackify"
+    },
+    {
+      "title": "Project Steve",
+      "description": "Backend workflow automation platform that compiles natural-language requirements into executable automation workflows. Generates runnable pipelines across 30+ node types with 85% validity on first execution. Designed modular pipeline for requirement parsing, validation, and workflow assembly exposed through 15+ REST endpoints with structured error handling and graceful degradation.",
+      "link": "https://github.com/Karthick-V/Project-Steve",
+      "tags": [
+        "FastAPI",
+        "JavaScript",
+        "n8n",
+        "Workflow Automation"
+      ],
+      "stats": [
+        "30+ node types",
+        "15+ REST endpoints",
+        "85% first-run validity"
       ],
       "image": "gitrid"
     },
     {
-      "title": "Quick QB",
-      "description": "Community-driven platform for sharing academic question banks and answer keys.",
-      "link": "https://quick-qb.pages.dev/",
+      "title": "Inspect Locker",
+      "description": "Firefox extension with 5+ downloads that persists DevTools inspect-element edits across reloads using a local-only storage model with zero external data transmission. Published on Mozilla Add-ons.",
+      "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
       "tags": [
-        "MongoDB",
-        "Express",
-        "React",
-        "Node.js",
-        "Discord Webhooks"
+        "JavaScript",
+        "WebExtension API",
+        "Firefox Extension"
       ],
       "stats": [
-        "~66k requests",
-        "lots of appreciation from students"
+        "Published on Mozilla Add-ons",
+        "5+ downloads",
+        "Zero external data"
       ],
       "image": "quickqb"
-    },
-    {
-      "title": "Trackify",
-      "description": "Web-based academic credit tracker that calculates CGPA by extracting grades from PDF documents.",
-      "link": "https://trackify.arbasil.me/",
-      "tags": [
-        "React",
-        "Node.js",
-        "pdf-parse",
-        "Express"
-      ],
-      "stats": [
-        "1.1k+ users",
-        "~66k requests",
-        "students actually use it"
-      ],
-      "image": "trackify"
     }
   ],
   "extensions": [
     {
-      "title": "CodeFocus",
-      "description": "Turns Codeforces into a full coding environment with a split-view editor, sample runner, one-click submit, and per-problem sketchpad.",
+      "title": "Inspect Locker",
+      "description": "Firefox extension that persists DevTools inspect-element edits across reloads using a local-only storage model with zero external data transmission.",
       "tags": [
-        "Chrome Extension",
-        "Codeforces",
-        "Monaco Editor"
-      ],
-      "link": "https://github.com/Visalan-H/codefocus",
-      "image": null
-    },
-    {
-      "title": "Audio Focus",
-      "description": "Automatically silences or ducks every background tab so the one you're focused on stays at full volume. Supports Mute mode and Duck mode with a customizable volume slider.",
-      "tags": [
-        "Chrome Extension",
+        "Firefox Extension",
         "JavaScript",
-        "Tab Audio"
+        "WebExtension API"
       ],
-      "link": "https://github.com/Visalan-H/audio-focus",
-      "image": null
-    },
-    {
-      "title": "JustResults",
-      "description": "Cuts down network requests to try and avoid server crash by skipping unnecessary CSS, images, and JavaScript.",
-      "tags": [
-        "Performance",
-        "Web Requests"
-      ],
-      "link": "https://github.com/Visalan-H/JustResults",
-      "image": "justresults"
-    }
-  ],
-  "extensionsArchive": [
-    {
-      "year": "2025",
-      "title": "LeetCode CMD+K",
-      "description": "A keyboard-first command palette for LeetCode. Search and insert Java & C++ snippets directly into the editor.",
-      "tech": [
-        "Monaco Editor",
-        "LeetCode",
-        "Java",
-        "C++"
-      ],
-      "link": "https://github.com/Visalan-H/Leetcode-Cmdk",
-      "image": "leetcode-cmdk"
-    },
-    {
-      "year": "2025",
-      "title": "Leetcode-Fahh",
-      "description": "Plays FAHH every time you fail a LeetCode test case. Works on both Run and Submit.",
-      "tech": [
-        "LeetCode",
-        "Chrome Extension"
-      ],
-      "link": "https://github.com/Visalan-H/Leetcode-Fahh",
+      "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
       "image": null
     }
   ],
+  "extensionsArchive": [],
   "archive": [
     {
       "year": "2025",
-      "title": "Echo",
-      "description": "Connects to your Gmail and automatically builds your job application timeline using AI — applied, interviewing, offered, rejected, all in one place.",
+      "title": "Sherlock",
+      "description": "High-throughput job data aggregation platform ingesting 15K+ records/day from 160+ sources with 20+ concurrent workers, content-hash deduplication, and Redis-backed caching.",
       "tech": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Gmail API",
-        "Groq API",
-        "OAuth"
+        "Python",
+        "Redis",
+        "Selenium",
+        "GraphQL"
       ],
-      "link": "https://echo-job.vercel.app/",
-      "image": "echo"
+      "link": "https://github.com/Karthick-V/Sherlock",
+      "image": "vizzible"
     },
     {
-      "year": "2026",
-      "title": "Bloom",
-      "description": "Full-screen hydration reminders with a living flower — wilts if you skip water, thrives when you drink.",
+      "year": "2025",
+      "title": "EARTHIFY",
+      "description": "Real-time waste classification with YOLOv8 + ONNX Runtime achieving 90% accuracy at 33ms latency (30 FPS on CPU).",
       "tech": [
-        "Flutter",
-        "Node.js",
-        "MongoDB",
-        "Firebase Cloud Messaging"
+        "C++",
+        "Python",
+        "YOLOv8",
+        "ONNX Runtime",
+        "Flask"
       ],
-      "link": "https://github.com/Visalan-H/bloom",
-      "image": "bloom"
+      "link": "https://github.com/Karthick-V/EARTHIFY",
+      "image": "trackify"
     },
     {
-      "year": "2026",
-      "title": "FLAMES",
-      "description": "The FLAMES calculator you played on paper in school, now on the internet.",
+      "year": "2025",
+      "title": "Project Steve",
+      "description": "Backend workflow automation compiling natural-language requirements into executable pipelines across 30+ node types via 15+ REST endpoints.",
       "tech": [
-        "HTML",
-        "CSS",
-        "JavaScript"
+        "FastAPI",
+        "JavaScript",
+        "n8n"
       ],
-      "link": "https://flamesss.vercel.app/",
-      "image": "flames"
-    },
-    {
-      "year": "2026",
-      "title": "npx-resume-new",
-      "description": "Share your resume through the terminal with colors and clickable links.",
-      "tech": [
-        "Node.js",
-        "CLI"
-      ],
-      "link": "https://github.com/Visalan-H/npx-resume",
-      "image": "npx-resume-new"
-    },
-    {
-      "year": "2026",
-      "title": "Checksite",
-      "description": "URL uptime monitor that pings your sites every 10 minutes and sends email alerts when they go down or recover.",
-      "tech": [
-        "React",
-        "Appwrite",
-        "Appwrite Functions",
-        "SendGrid"
-      ],
-      "link": "https://checksitee.vercel.app/",
-      "image": "checksite"
-    },
-    {
-      "year": "2026",
-      "title": "ShareHTML",
-      "description": "Organize AI-generated HTML files into projects, preview them in a sandboxed iframe, and share a read-only link with anyone.",
-      "tech": [
-        "React",
-        "TypeScript",
-        "Appwrite"
-      ],
-      "link": "https://sharehtml.vercel.app/",
-      "image": "sharehtml"
+      "link": "https://github.com/Karthick-V/Project-Steve",
+      "image": "gitrid"
     },
     {
       "year": "2024",
-      "title": "Vizzkers",
-      "description": "A social platform for cat lovers to share and celebrate their feline friends.",
+      "title": "Inspect Locker",
+      "description": "Firefox extension persisting DevTools inspect-element edits across reloads with local-only storage.",
       "tech": [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "JWT"
+        "JavaScript",
+        "WebExtension API"
       ],
-      "link": "https://vizzkers.vercel.app/",
-      "image": "vizzkers"
-    },
-    {
-      "year": "2025",
-      "title": "VizzPen",
-      "description": "A CodePen-inspired web application built in just 7 days using the MERN stack.",
-      "tech": [
-        "MongoDB",
-        "Express",
-        "React",
-        "Node.js",
-        "Monaco Editor"
-      ],
-      "link": "https://vizzpen.vercel.app/",
-      "image": "vizzpen"
-    },
-    {
-      "year": "2025",
-      "title": "Resume Roast",
-      "description": "AI-powered resume critique tool that provides harsh but constructive feedback.",
-      "tech": [
-        "React",
-        "Vite",
-        "Flask",
-        "Gemini API"
-      ],
-      "link": "https://fe-resume-roast.vercel.app/",
-      "image": "resume-roast"
-    },
-    {
-      "year": "2025",
-      "title": "NPX Resume",
-      "description": "Share your resume through the terminal with colors and clickable links.",
-      "tech": [
-        "React",
-        "Vite",
-        "Gemini API"
-      ],
-      "link": "https://npx-resume.vercel.app/",
-      "image": "npx-resume"
-    },
-    {
-      "year": "2025",
-      "title": "VizzTrack",
-      "description": "A full-stack MERN job application tracker to organize your job search.",
-      "tech": [
-        "MERN",
-        "TypeScript",
-        "JWT"
-      ],
-      "link": "https://vizz-track.vercel.app/",
-      "image": "vizztrack"
-    },
-    {
-      "year": "2024",
-      "title": "Image Slider",
-      "description": "A simple, clean image carousel/slider component.",
-      "tech": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "link": "https://visalan-h.github.io/Image-Slider/",
-      "image": "image-slider"
-    },
-    {
-      "year": "2025",
-      "title": "VizzCheck",
-      "description": "Check PDFs for QR codes and extract links from them.",
-      "tech": [
-        "React",
-        "PDF-Lib"
-      ],
-      "link": "https://vizzcheck.vercel.app/",
-      "image": "vizzcheck"
+      "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
+      "image": "quickqb"
     }
   ],
   "npmPackages": {
-    "items": [
-      {
-        "name": "vizz-init",
-        "description": "Express TS scaffold for backend.",
-        "link": "https://www.npmjs.com/package/vizz-init"
-      },
-      {
-        "name": "vizz-router",
-        "description": "Custom implementation of React Router.",
-        "link": "https://www.npmjs.com/package/vizz-router"
-      },
-      {
-        "name": "vizzy-search",
-        "description": "Implements fuzzy search using Levenshtein distance.",
-        "link": "https://www.npmjs.com/package/vizzy-search"
-      },
-      {
-        "name": "vizz-store",
-        "description": "Syncs state with LocalStorage",
-        "link": "https://www.npmjs.com/package/vizz-store"
-      },
-      {
-        "name": "vizzip",
-        "description": "Zips files using Huffman encoding.",
-        "link": "https://www.npmjs.com/package/vizzip"
-      },
-      {
-        "name": "create-vizzvite",
-        "description": "Vite React JS & CSS scaffold.",
-        "link": "https://www.npmjs.com/package/create-vizzvite"
-      }
-    ],
+    "items": [],
     "profileLink": {
-      "text": "Checkout my NPM profile",
-      "href": "https://www.npmjs.com/~vizzalan"
+      "text": "View NPM Profile",
+      "href": "https://www.npmjs.com/~karthickv"
     }
   },
   "experience": [
     {
-      "date": "August 2025",
-      "title": "Web Developer",
-      "company": "Tech Society",
-      "url": "https://techsociety.saveetha.in/",
-      "description": "Created a system to manage club signups, events, and projects with user roles and email verification.",
+      "date": "Jan 2025 – Sep 2026",
+      "title": "SDE and Analytics Intern",
+      "company": "Ankor",
+      "url": "https://ankor.in",
+      "description": "Developed and shipped 12+ backend features across 4 services, designing API contracts for 25+ endpoints and validating system behaviour through integration testing that raised suite coverage to 80%. Diagnosed and resolved 30+ production defects across backend services, tracing failures to root causes and delivering verified fixes with a median turnaround of under 2 days.",
       "tags": [
-        "React",
-        "Node",
-        "RBAC"
+        "Backend Development",
+        "API Design",
+        "Integration Testing",
+        "Production Debugging",
+        "System Reliability"
       ]
     },
     {
-      "date": "March 2025",
-      "title": "Developer",
-      "company": "Opportune",
-      "url": "https://opportune-six.vercel.app/",
-      "description": "Migrated the entire React app to Redux for better state management and fixed state-related bugs.",
+      "date": "2024 – Present",
+      "title": "Technical Assistant",
+      "company": "Freelance (Fiverr)",
+      "url": "https://www.fiverr.com/karthickv",
+      "description": "Built data collection, validation, and workflow automation tools with scripted integrity checks that sustained 99% accuracy across datasets containing 100K+ records. Analysed requirements and designed reliable solutions across 20+ client workflows under fixed deadlines, delivering 100% on time at a 4.9/5 average rating.",
       "tags": [
-        "React",
-        "Redux",
-        "State Management"
-      ]
-    },
-    {
-      "date": "February 2025",
-      "title": "Freelance Developer",
-      "company": "Alpana Tech",
-      "url": "https://alpanatech.com/",
-      "description": "Collaborated with a senior to deliver a smooth, animated website that the US client loved.",
-      "seniorLink": "https://aathieswar.vercel.app",
-      "tags": [
-        "React",
-        "Framer Motion",
-        "UI/UX"
+        "Data Engineering",
+        "Workflow Automation",
+        "Data Validation",
+        "Client Solutions"
       ]
     }
   ],
   "education": {
     "items": [
       {
-        "date": "2023 — 2027",
-        "degree": "B.Tech AIML",
-        "school": "Saveetha Engineering College",
-        "description": "Pursuing Artificial Intelligence and Machine Learning.",
+        "date": "2023 – 2027",
+        "degree": "B.E. Computer Science and Engineering",
+        "school": "Saveetha Engineering College, Chennai",
+        "description": "CGPA: 8.2/10. Solved 300+ problems on LeetCode. Winner, CODE CRUSADE. Finalist, NASSCOM Technology & SIH. Open-Source Contributor with 8+ merged pull requests.",
         "tags": [
-          "AIML",
-          "Data Science"
+          "Computer Science",
+          "Competitive Programming",
+          "Open Source"
         ]
       },
       {
@@ -459,7 +257,7 @@
       }
     ],
     "resumeLink": {
-      "text": "View My Resume",
+      "text": "View Resume",
       "href": "/resume.pdf"
     }
   }
