@@ -11,6 +11,19 @@ interface Props {
 
 const { title = meta.title, showPreloader = false, wide = false } = Astro.props;
 const description = meta.description;
+const canonicalUrl = "https://karthickv.dev" + Astro.url.pathname;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karthick V",
+  "url": "https://karthickv.dev/",
+  "sameAs": [
+    "https://www.linkedin.com/in/karthickv4/",
+    "https://github.com/Gorghs",
+    "https://leetcode.com/u/gorghs/"
+  ]
+};
 ---
 
 <!doctype html>
@@ -20,6 +33,7 @@ const description = meta.description;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="https://fav.farm/🤓" type="image/svg+xml" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -35,7 +49,7 @@ const description = meta.description;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://karthickv.dev" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content="https://karthickv.dev/preview.png" />
 
     <!-- Twitter -->
@@ -43,6 +57,10 @@ const description = meta.description;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://karthickv.dev/preview.png" />
+
+    <!-- JSON-LD Person Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

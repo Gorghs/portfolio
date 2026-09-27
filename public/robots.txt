@@ -1,0 +1,6 @@
+# robots.txt for https://karthickv.dev
+
+User-agent: *
+Allow: /
+
+Sitemap: https://karthickv.dev/sitemap-index.xml

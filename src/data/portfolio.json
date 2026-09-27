@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Karthick V | Software Engineer",
-    "description": "Software Engineer | Systems, Backend & Performance — Building high-throughput backend systems, data pipelines, and performance-optimized services."
+    "title": "Karthick V — Software Engineer | AI & Full-Stack Developer",
+    "description": "Karthick V — Software Engineer building high-throughput backend systems, AI-powered automation, and full-stack applications. Creator of Sherlock, EARTHIFY, Project Steve, and Inspect Locker."
   },
   "intro": {
     "name": "Karthick V",
     "title": "Software Engineer | Systems, Backend & Performance",
-    "bio": "Computer Science undergraduate graduating in 2027 with hands-on experience building backend and data-intensive systems."
+    "bio": "Building high-throughput backend systems, AI-powered automation, and full-stack applications."
   },
   "nav": [
     {
@@ -24,33 +24,28 @@
     {
       "name": "Experience",
       "href": "#experience"
-    },
-    {
-      "name": "Education",
-      "href": "#education"
     }
   ],
   "sectionDescriptions": {
     "projects": "High-throughput systems, data pipelines, and performance-critical services I've built.",
     "extensions": "Browser extensions that persist state and enhance developer workflows.",
     "npm-packages": "Occasionally publishing CLI tools and utilities to NPM.",
-    "experience": "Professional experience building and shipping backend features at scale.",
-    "education": "Academic background and achievements in Computer Science."
+    "experience": "Professional experience building and shipping backend features at scale."
   },
   "socials": [
     {
       "name": "GitHub",
-      "href": "https://github.com/Karthick-V",
+      "href": "https://github.com/Gorghs",
       "icon": "github"
     },
     {
       "name": "LinkedIn",
-      "href": "https://www.linkedin.com/in/karthick-v",
+      "href": "https://www.linkedin.com/in/karthickv4/",
       "icon": "linkedin"
     },
     {
       "name": "LeetCode",
-      "href": "https://leetcode.com/u/karthickv/",
+      "href": "https://leetcode.com/u/gorghs/",
       "icon": "leetcode"
     },
     {
@@ -236,26 +231,7 @@
     }
   ],
   "education": {
-    "items": [
-      {
-        "date": "2023 – 2027",
-        "degree": "B.E. Computer Science and Engineering",
-        "school": "Saveetha Engineering College, Chennai",
-        "description": "CGPA: 8.2/10. Solved 300+ problems on LeetCode. Winner, CODE CRUSADE. Finalist, NASSCOM Technology & SIH. Open-Source Contributor with 8+ merged pull requests.",
-        "tags": [
-          "Computer Science",
-          "Competitive Programming",
-          "Open Source"
-        ]
-      },
-      {
-        "date": "2023",
-        "degree": "HSE (Grade 12)",
-        "school": "KRM Matric School",
-        "description": "Completed Higher Secondary Education.",
-        "tags": []
-      }
-    ],
+    "items": [],
     "resumeLink": {
       "text": "View Resume",
       "href": "/resume.pdf"
