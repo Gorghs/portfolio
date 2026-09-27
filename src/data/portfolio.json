@@ -110,22 +110,6 @@
         "85% first-run validity"
       ],
       "image": "gitrid"
-    },
-    {
-      "title": "Inspect Locker",
-      "description": "Firefox extension with 5+ downloads that persists DevTools inspect-element edits across reloads using a local-only storage model with zero external data transmission. Published on Mozilla Add-ons.",
-      "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
-      "tags": [
-        "JavaScript",
-        "WebExtension API",
-        "Firefox Extension"
-      ],
-      "stats": [
-        "Published on Mozilla Add-ons",
-        "5+ downloads",
-        "Zero external data"
-      ],
-      "image": "quickqb"
     }
   ],
   "extensions": [
@@ -139,9 +123,66 @@
       ],
       "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
       "image": null
+    },
+    {
+      "title": "CodeFocus",
+      "description": "Turns Codeforces into a full coding environment with a split-view editor, sample runner, one-click submit, and per-problem sketchpad.",
+      "tags": [
+        "Chrome Extension",
+        "Codeforces",
+        "Monaco Editor"
+      ],
+      "link": "https://github.com/Gorghs/codefocus",
+      "image": null
+    },
+    {
+      "title": "Audio Focus",
+      "description": "Automatically silences or ducks every background tab so the one you're focused on stays at full volume. Supports Mute mode and Duck mode with a customizable volume slider.",
+      "tags": [
+        "Chrome Extension",
+        "JavaScript",
+        "Tab Audio"
+      ],
+      "link": "https://github.com/Gorghs/audio-focus",
+      "image": null
+    },
+    {
+      "title": "JustResults",
+      "description": "Cuts down network requests to try and avoid server crash by skipping unnecessary CSS, images, and JavaScript.",
+      "tags": [
+        "Performance",
+        "Web Requests"
+      ],
+      "link": "https://github.com/Gorghs/JustResults",
+      "image": "justresults"
     }
   ],
-  "extensionsArchive": [],
+  "extensionsArchive": [
+    {
+      "year": "2025",
+      "title": "LeetCode CMD+K",
+      "description": "A keyboard-first command palette for LeetCode. Search and insert Java & C++ snippets directly into the editor.",
+      "tech": [
+        "Monaco Editor",
+        "LeetCode",
+        "Java",
+        "C++"
+      ],
+      "link": "https://github.com/Gorghs/Leetcode-Cmdk",
+      "image": "leetcode-cmdk"
+    },
+    {
+      "year": "2025",
+      "title": "Leetcode-Fahh",
+      "description": "Plays FAHH every time you fail a LeetCode test case. Works on both Run and Submit.",
+      "tech": [
+        "LeetCode",
+        "Chrome Extension"
+      ],
+      "link": "https://github.com/Gorghs/Leetcode-Fahh",
+      "image": null
+    }
+  ],
   "archive": [
     {
       "year": "2025",
