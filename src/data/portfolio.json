@@ -24,13 +24,18 @@
     {
       "name": "Experience",
       "href": "#experience"
+    },
+    {
+      "name": "Education",
+      "href": "#education"
     }
   ],
   "sectionDescriptions": {
     "projects": "High-throughput systems, data pipelines, and performance-critical services I've built.",
     "extensions": "Browser extensions that persist state and enhance developer workflows.",
     "npm-packages": "Occasionally publishing CLI tools and utilities to NPM.",
-    "experience": "Professional experience building and shipping backend features at scale."
+    "experience": "Professional experience building and shipping backend features at scale.",
+    "education": "Academic background and achievements in Computer Science."
   },
   "socials": [
     {
@@ -251,7 +256,19 @@
     }
   ],
   "education": {
-    "items": [],
+    "items": [
+      {
+        "date": "2023 – 2027",
+        "degree": "B.E. Computer Science and Engineering",
+        "school": "Saveetha Engineering College, Chennai",
+        "description": "CGPA: 8.2/10. Solved 300+ problems on LeetCode. Winner, CODE CRUSADE. Finalist, NASSCOM Technology & SIH. Open-Source Contributor with 8+ merged pull requests.",
+        "tags": [
+          "Computer Science",
+          "Competitive Programming",
+          "Open Source"
+        ]
+      }
+    ],
     "resumeLink": {
       "text": "View Resume",
       "href": "/resume.pdf"
