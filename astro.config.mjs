@@ -9,8 +9,11 @@ import icon from 'astro-icon';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: true
+    },
     preview: {
-      allowedHosts: ['portfolio-b338.onrender.com', '.onrender.com']
+      allowedHosts: true
     },
     build: {
       rollupOptions: {
