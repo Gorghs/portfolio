@@ -132,18 +132,6 @@
       ],
       "link": "https://github.com/Gorghs/draftblaster",
       "image": null
-    },
-    {
-      "title": "Water Reminder",
-      "description": "A simple offline water reminder browser extension for Chromium-based browsers such as Opera, with configurable reminder intervals, motivational quotes, and audio alerts.",
-      "tags": [
-        "Chromium Extension",
-        "Manifest V3",
-        "WebExtension API",
-        "Offline"
-      ],
-      "link": "https://github.com/Gorghs/water_remainder",
-      "image": null
     }
   ],
   "extensionsArchive": [
