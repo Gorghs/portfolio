@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Karthick V — Software Engineer | AI & Full-Stack Developer",
-    "description": "Karthick V — Software Engineer building high-throughput backend systems, AI-powered automation, and full-stack applications. Creator of Sherlock, EARTHIFY, Project Steve, and Inspect Locker."
+    "title": "Karthick V — Software Development Engineer",
+    "description": "Karthick V — Software Development Engineer building backend services, workflow automation, and developer tools. Projects include Sherlock, EARTHIFY, and Project Steve."
   },
   "intro": {
     "name": "Karthick V",
-    "title": "Software Engineer | Systems, Backend & Performance",
-    "bio": "Building high-throughput backend systems, AI-powered automation, and full-stack applications."
+    "title": "Software Development Engineer",
+    "bio": "backend services, developer tools, and workflow automation."
   },
   "nav": [
     {
@@ -18,10 +18,6 @@
       "href": "#extensions"
     },
     {
-      "name": "NPM Packages",
-      "href": "#npm-packages"
-    },
-    {
       "name": "Experience",
       "href": "#experience"
     },
@@ -31,10 +27,9 @@
     }
   ],
   "sectionDescriptions": {
-    "projects": "High-throughput systems, data pipelines, and performance-critical services I've built.",
-    "extensions": "Browser extensions that persist state and enhance developer workflows.",
-    "npm-packages": "Occasionally publishing CLI tools and utilities to NPM.",
-    "experience": "Professional experience building and shipping backend features at scale.",
+    "projects": "Projects I've worked on, ranging from job search aggregation to workflow automation.",
+    "extensions": "Browser extensions that enhance developer workflows and daily habits.",
+    "experience": "Professional experience building and shipping backend features.",
     "education": "Academic background and achievements in Computer Science."
   },
   "socials": [
@@ -62,57 +57,55 @@
   "projects": [
     {
       "title": "Sherlock",
-      "description": "High-throughput job data aggregation platform ingesting 15K+ records/day from 160+ independent sources using 20+ concurrent workers. Engineered content-hash deduplication eliminating 35% overlapping postings and built a relevance-ranking pipeline returning results in under 200ms. Built fault-tolerant ingestion with Redis-backed caching, per-source rate limiting, and exponential-backoff retries reducing redundant requests by 60% with 99% pipeline uptime.",
-      "link": "https://github.com/Karthick-V/Sherlock",
+      "description": "A job aggregation engine that searches multiple job sources in parallel and exposes results through API, CLI, GraphQL, and MCP integrations. It normalizes and deduplicates job listings, supports optional AI-based relevance scoring, and includes email digest and scheduler support.",
+      "link": "https://github.com/Gorghs/Project_Sherlock",
       "tags": [
-        "Python",
-        "Redis",
-        "Selenium",
+        "NestJS",
+        "TypeScript",
         "GraphQL",
-        "Concurrency"
+        "MCP",
+        "AI Relevance",
+        "Redis"
       ],
       "stats": [
-        "15K+ records/day",
-        "160+ sources",
-        "200ms query latency",
-        "99% uptime"
+        "160+ job sources",
+        "API · CLI · GraphQL · MCP"
       ],
       "image": "sherlock"
     },
     {
       "title": "EARTHIFY",
-      "description": "Real-time waste classification service serving a 6-class vision model at 90% accuracy through a Flask API for webcam inference. Optimized inference pipeline with ONNX Runtime, reducing latency from 110ms to 33ms (70% improvement) and reaching 30 FPS on commodity CPU hardware.",
-      "link": "https://github.com/Karthick-V/EARTHIFY",
+      "description": "An intelligent waste classification system that uses YOLO-based object detection to identify different types of waste from uploaded images or a live camera feed, with sustainability tips and environmental impact information.",
+      "link": "https://github.com/Gorghs/EARTHIFY",
       "tags": [
-        "C++",
         "Python",
+        "Flask",
         "YOLOv8",
         "ONNX Runtime",
-        "Flask",
+        "Docker",
         "Computer Vision"
       ],
       "stats": [
-        "90% accuracy",
-        "33ms latency",
-        "30 FPS on CPU",
-        "70% speedup"
+        "12 waste categories",
+        "Image & live camera detection"
       ],
-      "image": "trackify"
+      "image": "earthify"
     },
     {
       "title": "Project Steve",
-      "description": "Backend workflow automation platform that compiles natural-language requirements into executable automation workflows. Generates runnable pipelines across 30+ node types with 85% validity on first execution. Designed modular pipeline for requirement parsing, validation, and workflow assembly exposed through 15+ REST endpoints with structured error handling and graceful degradation.",
-      "link": "https://github.com/Karthick-V/Project-Steve",
+      "description": "A FastAPI-powered workflow automation backend that turns requirements into structured n8n workflow JSON through a three-phase Build → QA → Security pipeline.",
+      "link": "https://github.com/Gorghs/Project_steve",
       "tags": [
         "FastAPI",
-        "JavaScript",
+        "Python",
         "n8n",
-        "Workflow Automation"
+        "Workflow Automation",
+        "API Key Auth",
+        "Swagger"
       ],
       "stats": [
-        "30+ node types",
-        "15+ REST endpoints",
-        "85% first-run validity"
+        "Build → QA → Security pipeline",
+        "Structured n8n export"
       ],
       "image": "gitrid"
     }
@@ -138,6 +131,18 @@
         "Automation"
       ],
       "link": "https://github.com/Gorghs/draftblaster",
+      "image": null
+    },
+    {
+      "title": "Water Reminder",
+      "description": "A simple offline water reminder browser extension for Chromium-based browsers such as Opera, with configurable reminder intervals, motivational quotes, and audio alerts.",
+      "tags": [
+        "Chromium Extension",
+        "Manifest V3",
+        "WebExtension API",
+        "Offline"
+      ],
+      "link": "https://github.com/Gorghs/water_remainder",
       "image": null
     }
   ],
@@ -165,92 +170,89 @@
       ],
       "link": "https://github.com/Gorghs/draftblaster",
       "image": null
+    },
+    {
+      "year": "2025",
+      "title": "Water Reminder",
+      "description": "A simple offline water reminder browser extension for Chromium-based browsers such as Opera, with configurable reminder intervals, motivational quotes, and audio alerts.",
+      "tech": [
+        "Chromium Extension",
+        "Manifest V3",
+        "WebExtension API",
+        "Offline"
+      ],
+      "link": "https://github.com/Gorghs/water_remainder",
+      "image": null
     }
   ],
   "archive": [
     {
       "year": "2025",
       "title": "Sherlock",
-      "description": "High-throughput job data aggregation platform ingesting 15K+ records/day from 160+ sources with 20+ concurrent workers, content-hash deduplication, and Redis-backed caching.",
+      "description": "A job aggregation engine searching 160+ job sources in parallel with deduplication, optional AI relevance scoring, and multi-interface support (API, CLI, GraphQL, MCP).",
       "tech": [
-        "Python",
-        "Redis",
-        "Selenium",
-        "GraphQL"
+        "NestJS",
+        "TypeScript",
+        "GraphQL",
+        "MCP",
+        "AI Relevance",
+        "Redis"
       ],
-      "link": "https://github.com/Karthick-V/Sherlock",
+      "link": "https://github.com/Gorghs/Project_Sherlock",
       "image": "sherlock"
     },
     {
       "year": "2025",
       "title": "EARTHIFY",
-      "description": "Real-time waste classification with YOLOv8 + ONNX Runtime achieving 90% accuracy at 33ms latency (30 FPS on CPU).",
+      "description": "Intelligent waste classification across 12 categories using YOLOv8 and ONNX Runtime for image upload and live camera feeds.",
       "tech": [
-        "C++",
         "Python",
+        "Flask",
         "YOLOv8",
         "ONNX Runtime",
-        "Flask"
+        "Docker"
       ],
-      "link": "https://github.com/Karthick-V/EARTHIFY",
-      "image": "trackify"
+      "link": "https://github.com/Gorghs/EARTHIFY",
+      "image": "earthify"
     },
     {
       "year": "2025",
       "title": "Project Steve",
-      "description": "Backend workflow automation compiling natural-language requirements into executable pipelines across 30+ node types via 15+ REST endpoints.",
+      "description": "FastAPI workflow automation backend generating structured n8n workflow JSON through Build → QA → Security pipeline.",
       "tech": [
         "FastAPI",
-        "JavaScript",
-        "n8n"
+        "Python",
+        "n8n",
+        "Workflow Automation"
       ],
-      "link": "https://github.com/Karthick-V/Project-Steve",
+      "link": "https://github.com/Gorghs/Project_steve",
       "image": "gitrid"
-    },
-    {
-      "year": "2024",
-      "title": "Inspect Locker",
-      "description": "Firefox extension persisting DevTools inspect-element edits across reloads with local-only storage.",
-      "tech": [
-        "JavaScript",
-        "WebExtension API"
-      ],
-      "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
-      "image": "quickqb"
     }
   ],
-  "npmPackages": {
-    "items": [],
-    "profileLink": {
-      "text": "View NPM Profile",
-      "href": "https://www.npmjs.com/~karthickv"
-    }
-  },
   "experience": [
     {
-      "date": "Jan 2025 – Sep 2026",
-      "title": "SDE and Analytics Intern",
+      "date": "Jul 2026 – Present",
+      "title": "SDE Intern",
       "company": "Ankor",
       "url": "https://ankor.in",
-      "description": "Developed and shipped 12+ backend features across 4 services, designing API contracts for 25+ endpoints and validating system behaviour through integration testing that raised suite coverage to 80%. Diagnosed and resolved 30+ production defects across backend services, tracing failures to root causes and delivering verified fixes with a median turnaround of under 2 days.",
+      "description": "Building and maintaining backend services and APIs, implementing feature integrations, and writing tests to ensure system reliability.",
       "tags": [
         "Backend Development",
         "API Design",
         "Integration Testing",
-        "Production Debugging",
         "System Reliability"
       ]
     },
     {
       "date": "2024 – Present",
-      "title": "Technical Assistant",
+      "title": "Freelance Developer",
       "company": "Freelance (Fiverr)",
       "url": "https://www.fiverr.com/karthickv",
-      "description": "Built data collection, validation, and workflow automation tools with scripted integrity checks that sustained 99% accuracy across datasets containing 100K+ records. Analysed requirements and designed reliable solutions across 20+ client workflows under fixed deadlines, delivering 100% on time at a 4.9/5 average rating.",
+      "description": "Built custom automation scripts, data validation tools, and web solutions for clients under fixed project timelines.",
       "tags": [
-        "Data Engineering",
-        "Workflow Automation",
+        "Automation",
         "Data Validation",
+        "Web Development",
         "Client Solutions"
       ]
     }

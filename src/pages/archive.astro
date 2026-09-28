@@ -9,8 +9,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/projects/*.{jpeg,jpg,png,gif}",
 );
 
+const imageKeyMap: Record<string, string> = {
+  earthify: "trackify",
+  sherlock: "vizzible",
+};
+
 const getImage = async (key: string) => {
-  const path = `/src/assets/projects/${key}.png`;
+  const fileKey = imageKeyMap[key] || key;
+  const path = `/src/assets/projects/${fileKey}.png`;
   return images[path] ? (await images[path]()).default : null;
 };
 
