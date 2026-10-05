@@ -56,23 +56,6 @@
   ],
   "projects": [
     {
-      "title": "Arch Linux Simulation",
-      "description": "Interactive browser-based Arch Linux desktop featuring a Minecraft Droste aesthetic, authentic Plymouth bootloader, terminal interpreter, and draggable apps.",
-      "link": "https://ubuntu-portfolio-kappa.vercel.app",
-      "tags": [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
-        "Arch Linux",
-        "Web Simulation"
-      ],
-      "stats": [
-        "Interactive Plymouth boot",
-        "Terminal · Apps · Minecraft theme"
-      ],
-      "image": "arch-portfolio"
-    },
-    {
       "title": "Sherlock",
       "description": "High-throughput job aggregation engine querying 160+ sources concurrently with deduplication, AI relevance scoring, and GraphQL & MCP integrations.",
       "link": "https://github.com/Gorghs/Project_Sherlock",
