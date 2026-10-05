@@ -5,157 +5,171 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 
 interface Props {
   title?: string;
+  description?: string;
   showPreloader?: boolean;
   wide?: boolean;
 }
 
-const { title = meta.title, showPreloader = false, wide = false } = Astro.props;
-const description = meta.description;
+const {
+  title = meta.title,
+  description = meta.description,
+  showPreloader = false,
+  wide = false,
+} = Astro.props;
 const canonicalUrl = "https://karthickv.dev" + Astro.url.pathname;
+const ogImage = "https://karthickv.dev/preview.png";
+const ogImageAlt = "Preview of Karthick V's software development portfolio";
 
-const personSchema = {
+const SITE = "https://karthickv.dev/";
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Karthick V",
-  "url": "https://karthickv.dev/",
-  "sameAs": [
-    "https://www.linkedin.com/in/karthickv4/",
-    "https://github.com/Gorghs",
-    "https://leetcode.com/u/gorghs/"
-  ]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE}#person`,
+      "name": "Karthick V",
+      "alternateName": "Gorghs",
+      "url": SITE,
+      "image": ogImage,
+      "jobTitle": "Software Development Engineer",
+      "description":
+        "Software Development Engineer building backend services, developer tools, and workflow automation.",
+      "email": "mailto:dev.karthickv@gmail.com",
+      "worksFor": { "@type": "Organization", "name": "Ankor", "url": "https://ankor.in" },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Saveetha Engineering College, Chennai",
+      },
+      "knowsAbout": [
+        "Backend Development",
+        "API Design",
+        "Workflow Automation",
+        "Developer Tools",
+        "Browser Extensions",
+        "TypeScript",
+        "Python",
+        "NestJS",
+        "FastAPI",
+        "GraphQL",
+        "Docker",
+      ],
+      "sameAs": [
+        "https://github.com/Gorghs",
+        "https://www.linkedin.com/in/karthickv4/",
+        "https://leetcode.com/u/gorghs/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}#website`,
+      "url": SITE,
+      "name": "Karthick V",
+      "inLanguage": "en",
+      "publisher": { "@id": `${SITE}#person` },
+    },
+    {
+      "@type": Astro.url.pathname === "/" ? "ProfilePage" : "CollectionPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": title,
+      "description": description,
+      "isPartOf": { "@id": `${SITE}#website` },
+      ...(Astro.url.pathname === "/"
+        ? { "mainEntity": { "@id": `${SITE}#person` } }
+        : { "author": { "@id": `${SITE}#person` } }),
+    },
+  ],
 };
+const urlTheme = Astro.url.searchParams.get("theme");
+const defaultTheme = urlTheme || "dark";
+const isDefaultDark = defaultTheme === "dark";
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-theme={defaultTheme} class:list={[{ dark: isDefaultDark, light: !isDefaultDark }, "scroll-smooth"]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Karthick V" />
     <link rel="icon" href="https://fav.farm/🤓" type="image/svg+xml" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="me" href="https://github.com/Gorghs" />
+    <link rel="me" href="https://www.linkedin.com/in/karthickv4/" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Prevent flash of wrong theme -->
-    <script is:inline>
-      (function() {
-        var t = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', t);
-      })();
-    </script>
-
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={Astro.url.pathname === "/" ? "profile" : "website"} />
+    <meta property="og:site_name" content="Karthick V" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content="https://karthickv.dev/preview.png" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1919" />
+    <meta property="og:image:height" content="1043" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    {Astro.url.pathname === "/" && <meta property="profile:username" content="Gorghs" />}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://karthickv.dev/preview.png" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <!-- JSON-LD Person Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* Preloader styles */
-      #preloader {
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        background: var(--color-background);
-        pointer-events: none;
-      }
 
-      #preloader-name {
-        position: fixed;
-        font-family: "Quicksand", sans-serif;
-        font-size: clamp(2.5rem, 10vw, 4rem);
-        font-weight: 700;
-        color: var(--color-primary);
-        letter-spacing: 0;
-        white-space: nowrap;
-        will-change: transform;
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      #preloader-name.centered {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      /* Background fade */
-      #preloader.fade-bg {
-        animation: bgFade 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
-      }
-
-      @keyframes bgFade {
-        to {
-          background: transparent;
+    <!-- Theme Initialization: Dark by default, prevents flash of wrong theme -->
+    <script is:inline>
+      (function() {
+        var urlTheme = new URLSearchParams(window.location.search).get('theme');
+        var stored = urlTheme || localStorage.getItem('theme');
+        var theme = stored ? stored : 'dark';
+        if (urlTheme) {
+          try { localStorage.setItem('theme', urlTheme); } catch(e) {}
         }
-      }
-
-      #preloader.done {
-        opacity: 0;
-        transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-
-      /* Content transitions */
-      .content-hidden {
-        opacity: 0;
-      }
-
-      .content-visible {
-        animation: fadeIn 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-      }
-
-      /* Hide the actual intro name initially */
-      #intro-name {
-        opacity: 0;
-      }
-
-      #intro-name.visible {
-        opacity: 1;
-        transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-    </style>
+      })();
+    </script>
   </head>
   <body
-    class="bg-background text-primary antialiased selection:bg-slate-700 selection:text-white leading-relaxed"
+    class="bg-[var(--color-background)] text-[var(--color-primary)] antialiased selection:bg-teal-500/25 selection:text-teal-300 leading-relaxed min-h-screen relative"
   >
+    <!-- Surface moving pointer glow -->
+    <div
+      id="pointer-glow"
+      class="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+      aria-hidden="true"
+    ></div>
+
     <ThemeToggle />
-    <!-- Preloader -->
-    {
-      showPreloader && (
-        <div id="preloader">
-          <div id="preloader-name" class="centered" />
-        </div>
-      )
-    }
 
     <div
       id="main-content"
       class:list={[
-        "mx-auto min-h-screen px-6 font-sans md:px-12 md:py-20 lg:py-0",
+        "relative z-10 mx-auto min-h-screen px-6 font-sans md:px-12 md:py-20 lg:py-0",
         wide ? "max-w-none py-8" : "max-w-7xl lg:px-24 py-12",
-        { "content-hidden": showPreloader },
       ]}
     >
       <div
@@ -185,13 +199,41 @@ const personSchema = {
       </div>
     </div>
 
-    {
-      showPreloader && (
-        <script>
-          import {initPreloader} from "../scripts/preloader.js";
-          initPreloader();
-        </script>
-      )
-    }
+    <!-- Surface Pointer Glow Script -->
+    <script is:inline>
+      (function() {
+        var glow = document.getElementById('pointer-glow');
+        if (!glow) return;
+
+        function getGlowGradient(x, y) {
+          var isDark = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark';
+          if (isDark) {
+            return 'radial-gradient(850px circle at ' + x + 'px ' + y + 'px, rgba(56, 189, 248, 0.18), rgba(37, 99, 235, 0.08) 40%, transparent 75%)';
+          } else {
+            return 'radial-gradient(850px circle at ' + x + 'px ' + y + 'px, rgba(37, 99, 235, 0.14), rgba(96, 165, 250, 0.07) 45%, transparent 75%)';
+          }
+        }
+
+        var lastX = -1000;
+        var lastY = -1000;
+
+        function updateGlow(x, y) {
+          lastX = x;
+          lastY = y;
+          glow.style.background = getGlowGradient(x, y);
+        }
+
+        window.addEventListener('pointermove', function(e) {
+          updateGlow(e.clientX, e.clientY);
+        }, { passive: true });
+
+        var observer = new MutationObserver(function() {
+          if (lastX >= 0) {
+            updateGlow(lastX, lastY);
+          }
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+      })();
+    </script>
   </body>
 </html>

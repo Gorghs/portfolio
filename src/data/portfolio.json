@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Karthick V — Software Development Engineer",
-    "description": "Karthick V — Software Development Engineer building backend services, workflow automation, and developer tools. Projects include Sherlock, EARTHIFY, and Project Steve."
+    "description": "Karthick V — Software Development Engineer building backend services, workflow automation, and developer tools. Projects include Arch Linux Simulation, Sherlock, EARTHIFY, and Project Steve."
   },
   "intro": {
     "name": "Karthick V",
@@ -55,6 +55,23 @@
     }
   ],
   "projects": [
+    {
+      "title": "Arch Linux Simulation",
+      "description": "An interactive Arch Linux desktop environment simulation in the browser with Minecraft Droste wallpaper aesthetic, authentic Plymouth bootloader, draggable windows, terminal command interpreter, and desktop apps.",
+      "link": "https://ubuntu-portfolio-kappa.vercel.app",
+      "tags": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Arch Linux",
+        "Web Simulation"
+      ],
+      "stats": [
+        "Interactive Plymouth boot",
+        "Terminal · Apps · Minecraft theme"
+      ],
+      "image": "arch-portfolio"
+    },
     {
       "title": "Sherlock",
       "description": "A job aggregation engine that searches multiple job sources in parallel and exposes results through API, CLI, GraphQL, and MCP integrations. It normalizes and deduplicates job listings, supports optional AI-based relevance scoring, and includes email digest and scheduler support.",
@@ -120,7 +137,7 @@
         "WebExtension API"
       ],
       "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
-      "image": null
+      "image": "inspect-locker"
     },
     {
       "title": "DraftBlaster",
@@ -131,7 +148,7 @@
         "Automation"
       ],
       "link": "https://github.com/Gorghs/draftblaster",
-      "image": null
+      "image": "draftblaster"
     }
   ],
   "extensionsArchive": [
@@ -145,7 +162,7 @@
         "WebExtension API"
       ],
       "link": "https://addons.mozilla.org/en-US/firefox/addon/inspect-locker/",
-      "image": null
+      "image": "inspect-locker"
     },
     {
       "year": "2025",
@@ -157,7 +174,7 @@
         "Automation"
       ],
       "link": "https://github.com/Gorghs/draftblaster",
-      "image": null
+      "image": "draftblaster"
     },
     {
       "year": "2025",
@@ -170,10 +187,24 @@
         "Offline"
       ],
       "link": "https://github.com/Gorghs/water_remainder",
-      "image": null
+      "image": "water-reminder"
     }
   ],
   "archive": [
+    {
+      "year": "2025",
+      "title": "Arch Linux Simulation",
+      "description": "Interactive browser-based Arch Linux desktop environment featuring Minecraft Droste wallpaper aesthetic, terminal command interpreter, draggable windows, and interactive desktop apps.",
+      "tech": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Arch Linux",
+        "Simulation"
+      ],
+      "link": "https://ubuntu-portfolio-kappa.vercel.app",
+      "image": "arch-portfolio"
+    },
     {
       "year": "2025",
       "title": "Sherlock",

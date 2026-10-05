@@ -10,8 +10,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 const imageKeyMap: Record<string, string> = {
-  earthify: "trackify",
-  sherlock: "vizzible",
+  earthify: "earthify",
+  sherlock: "sherlock",
+  gitrid: "gitrid",
+  "arch-portfolio": "arch-portfolio",
 };
 
 const getImage = async (key: string) => {
@@ -28,16 +30,20 @@ const projects = await Promise.all(
 );
 ---
 
-<BaseLayout title="All Projects | Karthick V" wide={true}>
+<BaseLayout
+  title="All Projects | Karthick V"
+  description="Project archive by Karthick V: Arch Linux Simulation, Sherlock job aggregation engine, EARTHIFY YOLOv8 waste classification, and Project Steve workflow automation."
+  wide={true}
+>
   <div class="max-w-7xl mx-auto lg:px-0 mt-0 lg:mt-0 mb-8">
     <BackButton />
   </div>
 
   <div class="mb-16 text-center">
-    <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+    <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
       Project Archive
     </h1>
-    <p class="mt-4 text-slate-400 mx-auto max-w-lg">
+    <p class="mt-4 text-slate-600 dark:text-slate-400 mx-auto max-w-lg">
       More stuff I've built. Some for fun, some out of necessity, all
       functional. Plenty more sitting in private repos.
     </p>

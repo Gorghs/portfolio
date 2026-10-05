@@ -22,16 +22,20 @@ const items = await Promise.all(
 );
 ---
 
-<BaseLayout title="Extensions | Karthick V" wide={true}>
+<BaseLayout
+  title="Extensions | Karthick V"
+  description="Browser extensions built by Karthick V, including Inspect Locker for Firefox DevTools, DraftBlaster for cold email automation, and an offline Water Reminder."
+  wide={true}
+>
   <div class="max-w-7xl mx-auto lg:px-0 mt-0 lg:mt-0 mb-8">
     <BackButton />
   </div>
 
   <div class="mb-16 text-center">
-    <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+    <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
       Extension Archive
     </h1>
-    <p class="mt-4 text-slate-400 mx-auto max-w-lg">
+    <p class="mt-4 text-slate-600 dark:text-slate-400 mx-auto max-w-lg">
       More stuff that lives in the browser. Some still useful, some just for fun.
     </p>
   </div>

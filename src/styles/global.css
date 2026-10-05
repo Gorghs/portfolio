@@ -1,80 +1,64 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
 :root {
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --theme-fade-duration: 260ms;
-}
 
-@theme {
-  --color-background: #111111;
-  --color-primary: #ffffff;
-  --color-secondary: #aaaaaa;
-  /* slightly dimmer text */
-  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  /* Default = Dark Mode */
+  --color-background: #0b0f19;
+  --color-primary: #f8fafc;
+  --color-secondary: #94a3b8;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* Light mode: readable colors on light background */
-[data-theme="light"] {
-  --color-background: #f8f9fb;
-  --color-primary: #1a1a1a;
-  --color-secondary: #444444;
-
-  /* Remap slate for light mode contrast */
-  --color-slate-100: #0f172a;
-  --color-slate-200: #1e293b;
-  --color-slate-300: #334155;
-  --color-slate-400: #3f4e63;
-  --color-slate-500: #546378;
-  --color-slate-600: #7a8ba0;
-  --color-slate-700: #c0c9d4;
-  --color-slate-800: #d5dbe5;
-  --color-slate-900: #e8ecf2;
-  --color-slate-950: #f0f3f7;
-
-  /* Teal adjusted for light bg */
-  --color-teal-200: #0d6d66;
-  --color-teal-300: #0f766e;
-  --color-teal-400: #0d6d66;
-
-  --color-green-500: #16a34a;
+@theme {
+  --color-background: var(--color-background);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --font-sans: var(--font-sans);
+  --ease-out-strong: var(--ease-out-strong);
+  --ease-in-out-strong: var(--ease-in-out-strong);
 }
 
-[data-theme="light"] ::selection {
-  background: #334155;
-  color: #fff;
+/* Light mode: complete clean white shade portfolio */
+[data-theme="light"],
+:root.light {
+  --color-background: #ffffff;
+  --color-primary: #0f172a;
+  --color-secondary: #475569;
+}
+
+/* Dark mode: default sleek dark mode */
+[data-theme="dark"],
+:root.dark {
+  --color-background: #0b0f19;
+  --color-primary: #f8fafc;
+  --color-secondary: #94a3b8;
 }
 
 html {
-  font-size: 110%;
-  /* approx 17.6px base, scales everything up */
   background-color: var(--color-background);
+  transition: background-color 200ms ease-out;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
 }
 
 /*
  * ZOOM / HIGH-DPI RESILIENCE
  * Fires on desktop whenever the viewport is squeezed by zoom or DPI.
- *
- * Two tracks, either one triggers the fix:
- *   A) height ≤ 864px + width ≥ 1024px
- *      → catches 125% DPI on 768p (614px) and 1080p (792px) screens
- *   B) width 1024–1280px (any height)
- *      → catches browser zoom on any screen where lg fires but xl doesn't
- *
- * What changes:
- *   1. font-size 110% → 100%  — shrinks all rem-based sizing ~9%
- *   2. sidebar + main pt-24 → pt-8  — keeps both columns aligned
- *   3. nav item padding + section gaps tightened
- *
- * overflow-y-auto on the sidebar header is the final safety net.
  */
 @media (min-width: 1024px) and (max-height: 864px),
        (min-width: 1024px) and (max-width: 1280px) {
-  html {
-    font-size: 100%;
-  }
-
   header.sidebar-header {
     padding-top: 2rem;
   }
@@ -97,14 +81,7 @@ html {
   }
 }
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-primary);
-  font-family: "Quicksand", ui-sans-serif, system-ui, sans-serif;
-  overflow-x: hidden;
-}
-
-/* Custom Scrollbar for subtle look */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -114,18 +91,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #334155;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #475569;
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: #bbb;
+  background: #cbd5e1;
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: #94a3b8;
 }

@@ -17,14 +17,14 @@ const { title, description, link, tags, image, year, index } = Astro.props;
 ---
 
 <article
-  class="group relative flex flex-col items-start rounded-xl border border-slate-800/50 bg-slate-800/20 transition-all duration-200 ease-out-strong hover:bg-slate-800/30 hover:shadow-lg active:scale-[0.98] overflow-hidden"
+  class="group relative flex flex-col items-start bg-white dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700/80 hover:bg-slate-50/90 dark:hover:bg-slate-800/50 hover:shadow-md dark:shadow-none rounded-xl p-4 transition-all duration-200 ease-out-strong active:scale-[0.98]"
 >
-  <div class="relative w-full aspect-video overflow-hidden border-b border-transparent transition-colors duration-200 ease-out-strong group-hover:border-slate-800/50">
-    {
-      image && (
+  {
+    image && (
+      <div class="relative w-full aspect-video overflow-hidden rounded-lg border border-slate-200/80 dark:border-slate-800 mb-4">
         <Image
           src={image}
-          alt={title}
+          alt={`${title} project preview`}
           class="h-full w-full object-cover transition-transform duration-300 ease-out-strong group-hover:scale-[1.03]"
           loading={index < 6 ? "eager" : "lazy"}
           fetchpriority={index < 6 ? "high" : "auto"}
@@ -32,40 +32,37 @@ const { title, description, link, tags, image, year, index } = Astro.props;
           height={400}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-      )
-    }
-    <div
-      class="absolute inset-0 bg-slate-900/0 transition-colors duration-200 ease-out-strong group-hover:bg-slate-900/10"
-    >
-    </div>
-  </div>
+      </div>
+    )
+  }
 
-  <div class="p-5 space-y-2 w-full flex flex-col flex-1">
+  <div class="space-y-2 w-full flex flex-col flex-1">
     {
       year && (
-        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+        <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
           {year}
         </div>
       )
     }
 
-    <h3 class="text-xl font-bold text-slate-200">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        class="focus-visible:text-teal-300"
+        class="hover:text-teal-700 dark:hover:text-teal-400 focus-visible:text-teal-700 dark:focus-visible:text-teal-400 transition-colors"
       >
-        <span class="absolute inset-0"></span>
+        <span class="absolute inset-0 rounded-xl"></span>
         {title}
         <Icon
           name="lucide:arrow-up-right"
           class="inline-block ml-1 h-4 w-4 mb-1 transition-transform duration-200 ease-out-strong group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none"
+          aria-hidden="true"
         />
       </a>
     </h3>
 
-    <p class="text-sm leading-normal text-slate-400 line-clamp-2">
+    <p class="text-sm leading-normal text-slate-600 dark:text-slate-400 line-clamp-2">
       {description}
     </p>
 
@@ -75,7 +72,7 @@ const { title, description, link, tags, image, year, index } = Astro.props;
     >
       {
         tags.map((tag) => (
-          <li class="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+          <li class="rounded-md bg-slate-100 dark:bg-teal-400/10 text-slate-800 dark:text-teal-300 border border-slate-200/80 dark:border-teal-500/20 px-2.5 py-1 text-xs font-semibold">
             {tag}
           </li>
         ))

@@ -6,8 +6,9 @@ import { projects, sectionDescriptions } from "../data/portfolio.json";
 // Import local images
 import gitridImg from "../assets/projects/gitrid.png";
 import quickqbImg from "../assets/projects/quickqb.png";
-import earthifyImg from "../assets/projects/trackify.png";
-import sherlockImg from "../assets/projects/vizzible.png";
+import earthifyImg from "../assets/projects/earthify.png";
+import sherlockImg from "../assets/projects/sherlock.png";
+import archImg from "../assets/projects/arch-portfolio.png";
 
 // Map image keys to imports
 const images: Record<string, ImageMetadata> = {
@@ -16,6 +17,8 @@ const images: Record<string, ImageMetadata> = {
   trackify: earthifyImg,
   earthify: earthifyImg,
   sherlock: sherlockImg,
+  "arch-portfolio": archImg,
+  "arch-simulation": archImg,
 };
 ---
 
@@ -25,14 +28,14 @@ const images: Record<string, ImageMetadata> = {
   aria-label="Selected projects"
 >
   <div
-    class="sticky top-0 z-20 -mx-6 mb-6 w-[100vw] max-w-[100vw] bg-background/90 px-6 py-5 pb-4 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:max-w-full lg:px-0 lg:py-0 lg:opacity-0 lg:mb-4"
+    class="sticky top-0 z-20 -mx-6 mb-6 w-[100vw] max-w-[100vw] bg-white/90 dark:bg-slate-950/90 px-6 py-5 pb-4 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:max-w-full lg:px-0 lg:py-0 lg:opacity-0 lg:mb-4"
   >
     <h2
-      class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
+      class="text-sm font-extrabold uppercase tracking-widest text-slate-900 dark:text-slate-100 lg:sr-only"
     >
       Projects
     </h2>
-    <p class="mt-2 text-sm text-slate-400 lg:hidden">
+    <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 lg:hidden">
       {sectionDescriptions.projects}
     </p>
   </div>
@@ -41,19 +44,17 @@ const images: Record<string, ImageMetadata> = {
       {
         projects.map((project, index) => (
           <li class="mb-12">
-            <div class="group relative grid gap-4 pb-1 transition-all duration-200 ease-out-strong sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:opacity-100! lg:group-hover/list:opacity-50 active:scale-[0.99]">
-              <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition-all duration-200 ease-out-strong motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
-
-              <div class="z-10 sm:order-2 sm:col-span-6">
-                <h3>
+            <div class="group relative grid sm:grid-cols-12 gap-4 sm:gap-6 md:gap-5 pb-1 transition-all duration-200 rounded-xl p-4 sm:p-5 bg-white dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:bg-slate-50/90 dark:hover:bg-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700/80 shadow-xs dark:shadow-none">
+              <div class="z-10 sm:order-2 sm:col-span-8">
+                <h3 class="group/link">
                   <a
-                    class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-slate-100 focus-visible:text-slate-100 group/link"
+                    class="inline-flex items-baseline font-bold text-lg text-slate-900 dark:text-slate-100 group-hover/link:text-teal-700 dark:group-hover/link:text-teal-400 hover:text-teal-700 dark:hover:text-teal-400 focus-visible:text-teal-700 dark:focus-visible:text-teal-400 transition-colors"
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={project.title}
                   >
-                    <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
+                    <span class="absolute inset-0 rounded-xl" />
                     <span>
                       {project.title}{" "}
                       <span class="inline-block">
@@ -68,38 +69,40 @@ const images: Record<string, ImageMetadata> = {
                     </span>
                   </a>
                 </h3>
-                <p class="mt-2 text-sm leading-normal text-slate-400">
+                <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400 font-normal">
                   {project.description}
                 </p>
                 <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                   {project.tags.map((tag) => (
                     <li class="mr-1.5 mt-2">
-                      <div class="flex items-center rounded-full bg-slate-800/50 px-3 py-1 text-xs font-medium leading-5 text-slate-300">
+                      <div class="flex items-center rounded-md bg-slate-100 dark:bg-teal-400/10 border border-slate-200/80 dark:border-teal-500/20 px-3 py-1 text-xs font-semibold text-slate-800 dark:text-teal-300">
                         {tag}
                       </div>
                     </li>
                   ))}
                 </ul>
                 {project.stats && project.stats.length > 0 && (
-                  <p class="mt-3 text-sm text-teal-400/80">
+                  <p class="mt-3 text-xs font-semibold text-teal-700 dark:text-teal-400 flex items-center gap-1">
                     {project.stats.join(" · ")}
                   </p>
                 )}
               </div>
 
               {images[project.image] ? (
-                <Image
-                  src={images[project.image]}
-                  alt={project.title}
-                  width={600}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchpriority={index === 0 ? "high" : "auto"}
-                  data-index={index}
-                  sizes="(max-width: 640px) 100vw, 300px"
-                  class="project-img rounded border-2 border-slate-200/10 transition-all duration-300 ease-out-strong group-hover:scale-[1.03] group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1 block w-full sm:w-auto mb-4 sm:mb-0 lg:grayscale lg:hover:grayscale-0 lg:group-hover:grayscale-0"
-                />
+                <div class="sm:order-1 sm:col-span-4 sm:translate-y-1 mb-4 sm:mb-0">
+                  <Image
+                    src={images[project.image]}
+                    alt={`${project.title} project preview`}
+                    width={600}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchpriority={index === 0 ? "high" : "auto"}
+                    data-index={index}
+                    sizes="(max-width: 640px) 100vw, 360px"
+                    class="project-img rounded-lg border border-slate-200 dark:border-slate-800 shadow-xs transition-all duration-300 ease-out-strong group-hover:scale-[1.03] block w-full aspect-video object-cover"
+                  />
+                </div>
               ) : (
-                <div class="rounded border-2 border-slate-200/10 bg-slate-800/50 sm:order-1 sm:col-span-2 sm:translate-y-1 w-full sm:w-50 h-30 flex items-center justify-center text-slate-500 text-xs mb-4 sm:mb-0">
+                <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 shadow-xs sm:order-1 sm:col-span-4 sm:translate-y-1 w-full aspect-video flex items-center justify-center text-slate-500 dark:text-slate-400 text-xs mb-4 sm:mb-0">
                   No image
                 </div>
               )}
@@ -112,12 +115,12 @@ const images: Record<string, ImageMetadata> = {
 </section>
 <div class="mt-12">
   <a
-    class="inline-flex items-center leading-tight text-teal-300 font-semibold group"
+    class="inline-flex items-center text-slate-900 dark:text-slate-100 hover:text-teal-700 dark:hover:text-teal-400 font-bold leading-tight group"
     aria-label="View Full Project Archive"
-    href="/archive"
+    href="/archive/"
   >
     <span
-      class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none"
+      class="border-b border-transparent pb-px transition group-hover:border-teal-700 dark:group-hover:border-teal-400 motion-reduce:transition-none"
     >
       View Full Project Archive
     </span>
