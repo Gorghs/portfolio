@@ -57,7 +57,7 @@
   "projects": [
     {
       "title": "Arch Linux Simulation",
-      "description": "An interactive Arch Linux desktop environment simulation in the browser with Minecraft Droste wallpaper aesthetic, authentic Plymouth bootloader, draggable windows, terminal command interpreter, and desktop apps.",
+      "description": "Interactive browser-based Arch Linux desktop featuring a Minecraft Droste aesthetic, authentic Plymouth bootloader, terminal interpreter, and draggable apps.",
       "link": "https://ubuntu-portfolio-kappa.vercel.app",
       "tags": [
         "Next.js",
@@ -74,7 +74,7 @@
     },
     {
       "title": "Sherlock",
-      "description": "A job aggregation engine that searches multiple job sources in parallel and exposes results through API, CLI, GraphQL, and MCP integrations. It normalizes and deduplicates job listings, supports optional AI-based relevance scoring, and includes email digest and scheduler support.",
+      "description": "High-throughput job aggregation engine querying 160+ sources concurrently with deduplication, AI relevance scoring, and GraphQL & MCP integrations.",
       "link": "https://github.com/Gorghs/Project_Sherlock",
       "tags": [
         "NestJS",
@@ -92,7 +92,7 @@
     },
     {
       "title": "EARTHIFY",
-      "description": "An intelligent waste classification system that uses YOLO-based object detection to identify different types of waste from uploaded images or a live camera feed, with sustainability tips and environmental impact information.",
+      "description": "Intelligent waste classification system powered by YOLOv8 object detection across 12 categories for image uploads and live camera feeds.",
       "link": "https://github.com/Gorghs/EARTHIFY",
       "tags": [
         "Python",
@@ -110,7 +110,7 @@
     },
     {
       "title": "Project Steve",
-      "description": "A FastAPI-powered workflow automation backend that turns requirements into structured n8n workflow JSON through a three-phase Build → QA → Security pipeline.",
+      "description": "FastAPI workflow automation backend generating validated n8n workflows through an automated Build → QA → Security validation pipeline.",
       "link": "https://github.com/Gorghs/Project_steve",
       "tags": [
         "FastAPI",
@@ -124,7 +124,7 @@
         "Build → QA → Security pipeline",
         "Structured n8n export"
       ],
-      "image": "gitrid"
+      "image": "project-steve"
     }
   ],
   "extensions": [
@@ -245,7 +245,7 @@
         "Workflow Automation"
       ],
       "link": "https://github.com/Gorghs/Project_steve",
-      "image": "gitrid"
+      "image": "project-steve"
     }
   ],
   "experience": [

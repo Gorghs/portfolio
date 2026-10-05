@@ -9,6 +9,7 @@ import quickqbImg from "../assets/projects/quickqb.png";
 import earthifyImg from "../assets/projects/earthify.png";
 import sherlockImg from "../assets/projects/sherlock.png";
 import archImg from "../assets/projects/arch-portfolio.png";
+import steveImg from "../assets/projects/project-steve.png";
 
 // Map image keys to imports
 const images: Record<string, ImageMetadata> = {
@@ -19,6 +20,8 @@ const images: Record<string, ImageMetadata> = {
   sherlock: sherlockImg,
   "arch-portfolio": archImg,
   "arch-simulation": archImg,
+  "project-steve": steveImg,
+  steve: steveImg,
 };
 ---
 
@@ -69,7 +72,7 @@ const images: Record<string, ImageMetadata> = {
                     </span>
                   </a>
                 </h3>
-                <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400 font-normal">
+                <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400 font-normal line-clamp-3">
                   {project.description}
                 </p>
                 <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
